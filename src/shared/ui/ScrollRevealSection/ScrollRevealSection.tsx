@@ -138,8 +138,8 @@ export const ScrollRevealSection = ({
               <div />
 
               {/* Правый текст */}
-              <div className="flex items-start justify-center px-8 lg:px-12 pt-16 lg:pt-24">
-                <div className="max-w-md space-y-6">
+              <div className="flex flex-col justify-end h-full px-8 lg:px-12 pt-16 lg:pt-24">
+                <div className="max-w-md">
                   {children}
                 </div>
               </div>

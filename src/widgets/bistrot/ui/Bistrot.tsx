@@ -22,13 +22,12 @@ export const Bistrot = () => {
       }
       bgColor="bg-gray-50"
     >
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="mt-6 px-8 py-3 bg-gray-900 text-white uppercase tracking-wider text-sm font-light hover:bg-gray-800 transition-colors"
+      <div
+        className="mb-8 px-8 py-3  text-lg text-gray-600 leading-relaxed"
       >
-        Узнать больше
-      </motion.button>
+          В сердце города наш Bistrot предлагает кулинарное путешествие, которое прославляет суть итальянской традиции с современным оттенком. Каждое блюдо демонстрирует аутентичные вкусы, переосмысленные с современной элегантностью.,
+          От обеда до ужина каждое посещение становится исследованием вкуса, данью уважения лучшему кулинарному мастерству.,
+      </div>
     </ScrollRevealSection>
   )
 }
