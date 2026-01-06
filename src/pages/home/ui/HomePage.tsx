@@ -8,13 +8,13 @@ import { Footer } from '@/widgets/footer'
 
 export const HomePage = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col">
       <Hero />
       <Patisserie />
       <Chocolatier />
       <Bistrot />
-      <CocktailBar />
-      <Institution />
+      {/*<CocktailBar />*/}
+      {/*<Institution />*/}
       <Footer />
     </div>
   )

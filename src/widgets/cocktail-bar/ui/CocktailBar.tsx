@@ -17,7 +17,6 @@ export const CocktailBar = () => {
           <div className="text-8xl">🍸</div>
         </div>
       }
-      bgColor="bg-white"
     >
       <motion.button
         whileHover={{ scale: 1.05 }}

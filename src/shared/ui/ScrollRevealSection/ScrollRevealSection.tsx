@@ -52,8 +52,18 @@ export const ScrollRevealSection = ({
   )
 
   // Левый и правый текст появляются по мере скролла
-  const textOpacity = useTransform(scrollYProgress, [0.4, 0.7, 1], [0, 0.6, 1])
-  const textY = useTransform(scrollYProgress, [0.4, 0.7, 1], [40, 20, 0])
+  // Текст появляется почти в конце анимации
+  const textOpacity = useTransform(
+      scrollYProgress,
+      [0.75, 0.9, 1],
+      [0, 0.6, 1]
+  )
+
+  const textY = useTransform(
+      scrollYProgress,
+      [0.75, 0.9, 1],
+      [40, 20, 0]
+  )
 
   // Вертикальная полоса слева (тонкая, светлая) - появляется сразу
   const barOpacity = useTransform(scrollYProgress, [0, 0.2, 0.4], [0, 0.5, 1])
@@ -70,7 +80,7 @@ export const ScrollRevealSection = ({
   const descriptionArray = Array.isArray(description) ? description : [description]
 
   return (
-    <div ref={containerRef} className={`relative ${bgColor} ${className}`}>
+    <div ref={containerRef} className={`relative ${className}`}>
       {/* Секция с большой высотой для скролла */}
       <div className="h-[250vh] relative">
         {/* Sticky контейнер - 100% ширины и высоты экрана */}

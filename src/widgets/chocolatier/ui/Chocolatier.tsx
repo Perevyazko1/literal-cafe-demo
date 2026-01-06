@@ -18,7 +18,6 @@ export const Chocolatier = () => {
                  priority
                  className="object-cover"/>
       }
-      bgColor="bg-white"
       bottomText="Традиция, сохраняемая с преданностью, предлагающая сенсорный опыт чистейшего совершенства."
       navigationLabel="CHOCOLATIER"
     />

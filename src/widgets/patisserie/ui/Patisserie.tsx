@@ -18,7 +18,6 @@ export const Patisserie = () => {
                priority
                className="object-cover"/>
       }
-      bgColor="bg-white"
       bottomText="Каждое творение воплощает баланс и утонченность и предназначено для наслаждения каждый день."
       navigationLabel="PATISSERIE"
     />
