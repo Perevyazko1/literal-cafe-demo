@@ -1,0 +1,2 @@
+export { ScrollRevealSection } from './ScrollRevealSection'
+
