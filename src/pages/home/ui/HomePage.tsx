@@ -9,7 +9,7 @@ import {useEffect, useRef} from "react";
 import Lenis from 'lenis';
 
 
-export const HomePage = () => {
+ const HomePage = () => {
 
     const container = useRef<HTMLDivElement | null>(null);;
     const { scrollYProgress } = useScroll({
@@ -32,16 +32,15 @@ export const HomePage = () => {
 
   return (
     <>
-      {typeof window !== "undefined" && window.innerWidth >= 1024 ? (
-        <div className="min-h-screen flex flex-col gap-[10vh]" ref={container}>
+        <div className="min-h-screen lg:flex flex-col gap-[10vh] hidden" ref={container}>
           <ZoomParallax />
           <Patisserie />
           <Bistrot />
           <Chocolatier />
           <Footer />
         </div>
-      ) : (
-        <div className="min-h-screen flex items-center justify-center p-8 bg-gray-100 text-center">
+
+        <div className="min-h-screen flex items-center justify-center p-8 bg-gray-100 text-center lg:hidden">
           <div>
             <h1 className="text-3xl font-bold mb-4 text-gray-700">Демо доступно только на десктопе</h1>
             <p className="text-lg text-gray-700">
@@ -49,7 +48,8 @@ export const HomePage = () => {
             </p>
           </div>
         </div>
-      )}
+
     </>
   )
 }
+export default HomePage; // <- default export
