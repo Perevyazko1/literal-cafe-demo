@@ -28,7 +28,7 @@ COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/node_modules ./node_modules
 # Копируем файл конфигурации Next.js
-COPY --from=builder /app/next.config.ts ./
+COPY --from=builder /app/next.config.js ./
 # Копируем конфигурацию, если надо
 COPY --from=builder /app/tsconfig.json ./
 
