@@ -1,4 +1,4 @@
-# Literal Cafe
+# Литературное Кафе
 
 Проект на Next.js с применением архитектуры Feature-Sliced Design (FSD), Tailwind CSS и Framer Motion.
 

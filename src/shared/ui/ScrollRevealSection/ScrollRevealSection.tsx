@@ -38,17 +38,28 @@ export const ScrollRevealSection = ({
     offset: ['start start', 'end end']
   })
 
-  // Картинка: стартует на 100vw, затем уменьшается до 33.33%
+  // Картинка: стартует с 80vw / 80vh и уменьшается
   const imageWidth = useTransform(
       scrollYProgress,
       [0, 0.3, 0.6, 1],
-      [100, 80, 50, 33.33]
+      [80, 70, 50, 33.33]
+  )
+  const imageHeight = useTransform(
+      scrollYProgress,
+      [0, 0.3, 0.6, 1],
+      [100, 90, 95, 80]
   )
 
   const imageX = useTransform(
     scrollYProgress,
     [0, 0.6, 1],
     ['0%', '0%', '0%']
+  )
+
+  const imageY = useTransform(
+    scrollYProgress,
+    [0, 0.4, 1],
+    ['0vh', '8vh', '15vh']
   )
 
   // Левый и правый текст появляются по мере скролла
@@ -70,8 +81,10 @@ export const ScrollRevealSection = ({
   const barHeight = useTransform(scrollYProgress, [0, 0.2, 0.4], ['0%', '50%', '100%'])
 
   // Плавные анимации
-  const smoothImageWidth = useSpring(imageWidth, { stiffness: 100, damping: 30 })
+  const smoothImageWidth = useSpring(imageWidth, { stiffness: 80, damping: 30 })
+  const smoothImageHeight = useSpring(imageHeight, { stiffness: 100, damping: 30 })
   const smoothImageX = useSpring(imageX, { stiffness: 100, damping: 30 })
+  const smoothImageY = useSpring(imageY, { stiffness: 80, damping: 30 })
   const smoothTextOpacity = useSpring(textOpacity, { stiffness: 100, damping: 30 })
   const smoothTextY = useSpring(textY, { stiffness: 100, damping: 30 })
   const smoothBarOpacity = useSpring(barOpacity, { stiffness: 100, damping: 30 })
@@ -99,6 +112,8 @@ export const ScrollRevealSection = ({
             <motion.div
                 style={{
                   width: useMotionTemplate`${smoothImageWidth}vw`,
+                  // height: useMotionTemplate`${smoothImageHeight}vh`,
+                  // y: smoothImageY,
                 }}
                 className="absolute inset-y-0 left-1/2 -translate-x-1/2 h-full flex items-center justify-center z-10"
             >
@@ -116,9 +131,9 @@ export const ScrollRevealSection = ({
               className="absolute inset-0 z-20 grid grid-cols-3"
             >
               {/* Левый текст */}
-              <div className="flex items-start justify-center px-8 lg:px-12 pt-16 lg:pt-24">
-                <div className="max-w-md space-y-6">
-                  <h2 className="text-5xl md:text-6xl font-light text-gray-900 tracking-tight">
+              <div className="flex px-12 pt-16 w-full">
+                <div className="max-w-md w-full mx-auto space-y-6">
+                  <h2 className="font-light text-gray-900 tracking-tight text-[clamp(1.5rem,3.5vw,3rem)]">
                     {title}
                   </h2>
                   {subtitle && (
@@ -127,7 +142,7 @@ export const ScrollRevealSection = ({
                     </h3>
                   )}
                   {descriptionArray.map((desc, index) => (
-                    <p key={index} className="text-lg text-gray-600 leading-relaxed">
+                    <p key={index} className="text-lg text-gray-600 leading-relaxed whitespace-pre-line">
                       {desc}
                     </p>
                   ))}

@@ -14,9 +14,9 @@ export const Footer = () => {
           className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12"
         >
           <div>
-            <h3 className="text-2xl font-light mb-4 text-gray-900">Literal Cafe</h3>
+            <h3 className="text-2xl font-light mb-4 text-gray-900">Литературное Кафе</h3>
             <p className="text-gray-600 text-sm leading-relaxed">
-              В сердце города, с городом в сердце с 1733 года.
+              В сердце города, с городом в сердце с 1834 года.
             </p>
           </div>
           <div>
@@ -24,7 +24,7 @@ export const Footer = () => {
             <ul className="space-y-2 text-gray-600 text-sm">
               <li>📧 welcome@literalcafe.com</li>
               <li>📞 +7 (999) 123-45-67</li>
-              <li>📍 Москва, ул. Примерная, д. 1</li>
+              <li>📍 Россия, 191181, Санкт-Петербург, Невский пр., 18</li>
             </ul>
           </div>
           <div>
@@ -42,7 +42,7 @@ export const Footer = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="border-t border-gray-200 pt-8 text-center text-gray-500 text-sm"
         >
-          <p>&copy; {new Date().getFullYear()} Literal Cafe. Все права защищены.</p>
+          <p>&copy; {new Date().getFullYear()} Литературное Кафе. Все права защищены.</p>
         </motion.div>
       </div>
     </footer>

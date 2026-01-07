@@ -12,7 +12,7 @@ export const Hero = () => {
           transition={{ duration: 1, ease: 'easeOut' }}
           className="text-4xl md:text-6xl lg:text-7xl font-light text-gray-900 leading-tight mb-8"
         >
-          В сердце города, с городом в сердце с 1733 года.
+          В сердце города, с городом в сердце с 1834 года.
         </motion.h1>
       </div>
     </section>
